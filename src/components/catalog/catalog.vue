@@ -2,17 +2,11 @@
   <div class="container">
     <div class="item-job">
       <div class="catalog">
-        <CatalogItem/>
         <CatalogItem
             v-for="item in data"
             :key="item.id"
             :item_data="item"
         />
-        <div v-for="item in data.items"
-             :key="item.id"
-             :item_data="item">
-        </div>
-
       </div>
     </div>
   </div>
