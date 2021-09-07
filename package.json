@@ -2,13 +2,13 @@
   "name": "arsmoon",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://cleverstaff.net/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "ant-design-vue": "^1.7.8",
     "axios": "^0.21.3",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",

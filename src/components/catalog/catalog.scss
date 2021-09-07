@@ -1,0 +1,10 @@
+.catalog {
+  padding-top: 150px;
+}
+//::v-deep {
+  .ant-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+//}

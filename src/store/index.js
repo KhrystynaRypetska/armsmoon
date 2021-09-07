@@ -24,17 +24,8 @@ export default new Vuex.Store({
   },
   actions: {
     GET_DATA_FROM_API({commit}) {
-        const config = {
-            headers: {
-                // "Access-Control-Allow-Origin": "origin",
-                // "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE",
-                // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
-                // "Access-Control-Max-Age": "3600",
-                // "Access-Control-Allow-Credentials": "true"
-            }
-        };
 
-      return axios.get(`https://cleverstaff.net/hr/public/getVacancies?alias=staffingpartner`, config)
+      return axios.get(`http://localhost:8080/hr/public/getVacancies?alias=staffingpartner`)
           .then((response) => {
             commit("SET_DATA_TO_STATE", response.data.objects);
           } )
@@ -44,10 +35,9 @@ export default new Vuex.Store({
           })
     },
     GET_VACANCY_FROM_API({commit}, vacancyId) {
-        return axios.get(`https://cleverstaff.net/hr/public/getVacancy?host=&id=${vacancyId}`)
+        return axios.get(`http://localhost:8080/hr/public/getVacancy?host=&id=${vacancyId}`)
             .then((response) => {
-                console.log(response.data, '----- LOG ----')
-                commit("SET_VACANCY_TO_STATE", response.data)
+                commit("SET_VACANCY_TO_STATE", response.data.object)
             })
     }
   },

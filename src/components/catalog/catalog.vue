@@ -1,18 +1,20 @@
 <template>
-  <div class="container">
     <div class="item-job">
       <div class="catalog">
+        <a-row>
         <CatalogItem
             v-for="item in data"
             :key="item.id"
             :item_data="item"
         />
+        </a-row>
       </div>
     </div>
-  </div>
 </template>
 
-
+<style lang="scss" scoped>
+@import "catalog";
+</style>
 
 <script>
 import CatalogItem from '@/components/catalog-item/catalog-item.vue';
